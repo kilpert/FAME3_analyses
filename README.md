@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/847599534.svg)](https://zenodo.org/doi/10.5281/zenodo.13373531)
+
 # minion analyses
 
 This [Snakemake](https://github.com/snakemake/snakemake) workflow performs the anlysis of long read (Nanopore) repeat sequence data. It calculates statistics and generates plots (custom Python and R scripts) to characterize the nature of the repeat expansion in length and motif composition. Specific alleles (length and motif) can be defined manually for enhanced visualization. 
