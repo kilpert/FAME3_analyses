@@ -1,0 +1,17 @@
+.idea/
+.snakemake/
+results*/
+modules/
+resources/clair3/
+resources/shasta/
+software/
+**/.benchmark/
+resources/winnowmap*/
+resources/regions/deprecated/
+**/.Rhistory
+Rplots.pdf
+.~lock*
+fastq/
+input*/
+demo/output*/
+**/.fuse_*

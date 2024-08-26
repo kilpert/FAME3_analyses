@@ -1,0 +1,60 @@
+####################################################################################################
+## FAME3
+####################################################################################################
+
+fastq_dir: fastq/FAME3
+results: results/FAME3
+
+# whitelist:
+#   - 5-I-6_Bl
+#   - 5-I-7_Bl
+#   - 5-I-8_Bl
+#   - 5-II-15_Bl
+#   - 5-II-8_Bl
+#   - 5-II-9_Bl
+#   - 6-II-7_Bl
+#   - 6-II-8_Bl
+
+
+###################################################################################################
+## FAME3 configuration
+## MARCHF6 (+strand)
+###################################################################################################
+
+## reverse_complement: False # Gene is on +strand!
+
+## Always forward
+flanking_region:
+  upstream:   ACACTTATACTGTTGTGGTTCTGTT # 25 bp
+  downstream: CCGAGATGGAGTCTTGCCCTGTTGC # 25 bp
+  
+filter_repeats:
+  - TTTCATTTCA
+  - TTTCATTTCA_absent
+
+motif_colors:
+  TTTTA: "#FEC000" # orange
+  TTTTG: "#56b4e9" # cyan
+  TTTCA: "#FF0000" # red
+  TTATG: "#0072b2" # blue
+  other: "black"
+
+
+####################################################################################################
+## Workflow configuration
+####################################################################################################
+
+verbose: True
+
+
+## tools
+
+fastqc:
+  adapters: resources/ont/ont_adapters.fastqc.tsv
+
+bbduk:
+  default: t=4 pigz=t unpigz=t
+  filtering: -Xmx2g qin=33 minlen=200 qtrim=lr trimq=10 maq=10 maxlen=100000
+
+repeat_region_spanning:
+  edit_distance: 2
